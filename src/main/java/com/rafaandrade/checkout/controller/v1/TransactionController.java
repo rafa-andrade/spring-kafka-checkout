@@ -41,7 +41,7 @@ public class TransactionController {
   @DeleteMapping("/{externalReference}")
   @ResponseStatus(ACCEPTED)
   public void cancelTransaction(@PathVariable UUID externalReference) {
-    transactionCancellationService.sentForCancelation(externalReference);
+    transactionCancellationService.sentForCancellation(externalReference);
   }
 
 }

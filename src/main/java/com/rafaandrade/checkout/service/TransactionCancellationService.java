@@ -24,7 +24,7 @@ public class TransactionCancellationService {
   private final TransactionRepository transactionRepository;
   private final TransactionEventProducer transactionEventProducer;
 
-  public void sentForCancelation(UUID externalReference) {
+  public void sentForCancellation(UUID externalReference) {
     Transaction transaction = transactionRepository.findByExternalReference(externalReference)
         .orElseThrow(NoSuchElementException::new);
 
