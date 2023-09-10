@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+    producer:
+      batch-size: 1
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.rafaandrade.checkout.integration.kafka.dto
+    topics:
+      transaction-event:
+        name: transaction-event
+        partitions: 10
+        replicas: 1
+  datasource:
+    url: jdbc:postgresql://localhost:5432/checkout
+    username: checkout
+    password: checkout
+  jpa:
+    database-plataform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: create-drop
+    properties.hibernate:
+      show_sql: true
+      format_sql: true
