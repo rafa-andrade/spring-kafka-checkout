@@ -9,7 +9,7 @@ A Proof of Concept (POC) project simulating a microservice for e-commerce checko
 
 ## Introduction
 
-The `spring-kafka-checkout` project simulates a microservice for e-commerce checkout. It demonstrates the integration of Java 17, Spring Boot 3, Kafka, and Gradle. This project provides a basic setup for handling asynchronous transaction processing, with events sent to a Kafka topic and consumed by different processors for status updates.
+The `spring-kafka-checkout` project simulates a microservice for e-commerce checkout. It demonstrates the integration of Java 17, Spring Boot 3, and Kafka. This project provides a basic setup for handling asynchronous transaction processing, with events sent to a Kafka topic and consumed by different processors for status updates.
 
 ## Features
 
